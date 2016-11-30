@@ -45,7 +45,6 @@ feature "User checks a recipe's deliciousness", %(
 
   scenario "user submits an empty form" do
     visit "/"
-    fill_in "Recipe Name", with: ""
     click_button "Submit"
 
     expect(page).to have_content("You can't submit an empty recipe name!")
@@ -53,7 +52,6 @@ feature "User checks a recipe's deliciousness", %(
 
   scenario "user navigates back to the home page after submitting an empty form" do
     visit "/"
-    fill_in "Recipe Name", with: ""
     click_button "Submit"
     click_link "Try again!"
 
